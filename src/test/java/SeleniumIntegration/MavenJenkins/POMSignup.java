@@ -32,12 +32,13 @@ import com.saucelabs.common.SauceOnDemandSessionIdProvider;
 
 public class POMSignup{
 	
-	private static ScreenRecorder screenRecorder;
+	//private static ScreenRecorder screenRecorder;
 	private static WebDriver driver = null;
 	private static String sessionId;
 	
 	public static void main(String[] args) throws IOException, AWTException {
 		
+		/*
 		File file = new File("D:\\screenshots");  
 		Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
         int width = screenSize.width;
@@ -48,6 +49,7 @@ public class POMSignup{
 			         .getLocalGraphicsEnvironment()
 			         .getDefaultScreenDevice()
 			         .getDefaultConfiguration();
+		*/
 			      /*
 			       * 
 			       * save file at a default location in videos folder in windows
@@ -72,6 +74,7 @@ public class POMSignup{
 		       /*
 		        * save file at the desired location
 		        */
+		/*
 		screenRecorder = new SpecializedScreenRecorder(gconfig, captureSize,
 	               new Format(MediaTypeKey, MediaType.FILE, MimeTypeKey, MIME_AVI),
 	               new Format(MediaTypeKey, MediaType.VIDEO, EncodingKey, ENCODING_AVI_TECHSMITH_SCREEN_CAPTURE,
@@ -82,6 +85,8 @@ public class POMSignup{
 	               new Format(MediaTypeKey, MediaType.VIDEO, EncodingKey, "black",
 	                    FrameRateKey, Rational.valueOf(30)),
 	               null, file, "MyVideo");
+	               
+	      */
 		 DesiredCapabilities caps = DesiredCapabilities.firefox();
 	        caps.setCapability("platform", "Linux");
 	        caps.setCapability("version", "41");
@@ -89,7 +94,7 @@ public class POMSignup{
 	        caps.setCapability("tags", "Tag1");
 	        caps.setCapability("build", "v1.0");
 	        WebDriver driver = new RemoteWebDriver(
-	                new URL("http://abhinav1881:0a0848e0-5d68-46bd-a9e2-8b23ad5baa57@ondemand.saucelabs.com:80/wd/hub"),
+	                new URL("http://amit1881:c33b1e5d-0656-41e9-87f0-5c16dc26e576@ondemand.saucelabs.com:80/wd/hub"),
 	                caps);
 	       
 	        sessionId = (((RemoteWebDriver) driver).getSessionId()).toString();
@@ -97,7 +102,7 @@ public class POMSignup{
 	      driver = new FirefoxDriver();
 	      
 	      // Start Capturing the Video
-	      screenRecorder.start();
+	      //screenRecorder.start();
 	      
 	      //implicit wait
 	      driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
@@ -139,7 +144,7 @@ public class POMSignup{
 	      driver.close();
 	      
 	   // Stop the ScreenRecorder
-	      screenRecorder.stop();
+	      //screenRecorder.stop();
 	      
 	      
 	     
